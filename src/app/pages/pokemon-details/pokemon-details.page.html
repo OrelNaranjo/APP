@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles del Pokémon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="pokemon">
+    <ion-card-header>
+      <ion-card-title class="ion-text-capitalize">{{ pokemon.name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img [src]="pokemon.sprite" alt="{{ pokemon.name }}">
+      <p>N° {{ pokemon.id.toString().padStart(4, '0') }}</p>
+      <p>Tipos: <app-pokemon-type *ngFor="let type of pokemon.types" [type]="type"></app-pokemon-type></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

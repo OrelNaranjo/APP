@@ -11,6 +11,14 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: 'pokedex',
+    loadChildren: () => import('./pages/pokedex/pokedex.module').then( m => m.PokedexPageModule)
+  },
+  {
+    path: 'pokemon-details/:id',
+    loadChildren: () => import('./pages/pokemon-details/pokemon-details.module').then( m => m.PokemonDetailsPageModule)
+  },
 ];
 
 @NgModule({
